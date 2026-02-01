@@ -9,5 +9,5 @@ noBtn.addEventListener("mouseover", () => {
 });
 
 yesBtn.addEventListener("click", () => {
-  msg.innerHTML = "Thank you ❤️ I promise to do better.";
+  msg.innerHTML = "Yayyy ❤️ I love you!";
 });
