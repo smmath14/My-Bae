@@ -1,6 +1,7 @@
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const msg = document.getElementById("msg");
+const card = document.querySelector(".card");
 
 /* FULLSCREEN */
 document.addEventListener("click", () => {
@@ -23,18 +24,34 @@ noBtn.addEventListener("mouseover", () => {
 
 /* YES BUTTON */
 yesBtn.addEventListener("click", () => {
-  msg.innerHTML = "Yayyy ❤️ She said YES 🥹 Best day ever!";
-
   // Remove leave warning
   window.onbeforeunload = null;
 
+  // Hide NO and card
+  noBtn.style.display = "none";
+  card.innerHTML = `
+    <div style="
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      font-size:40px;
+      color:#ff4d79;
+    ">
+      Yayyy ❤️<br>
+      She said YES 🥹<br>
+      Best day ever!
+    </div>
+  `;
+
   // Open call
   setTimeout(() => {
-    window.location.href = "tel:7878774743"; // put your real number
-  }, 1500);
+    window.location.href = "tel:+919876543210";
+  }, 2000);
 
   // Close page
   setTimeout(() => {
     window.close();
-  }, 3000);
+  }, 4000);
 });
