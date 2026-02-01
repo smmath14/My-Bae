@@ -43,10 +43,10 @@ h2 {
 }
 
 #no {
-  background: transparent;
+  background: Gray;
   border: none;
   margin-left: 20px;
-  color: gray;
+  color: black;
   cursor: pointer;
 }
 
@@ -55,3 +55,4 @@ h2 {
   color: #ff4d79;
   font-size: 18px;
 }
+
