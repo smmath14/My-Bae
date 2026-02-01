@@ -40,7 +40,6 @@ yesBtn.addEventListener("click", () => {
   card.innerHTML = `
     <div style="
       height:100vh;
-      width:100vw;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -56,9 +55,9 @@ yesBtn.addEventListener("click", () => {
   `;
 
   // KEEP MESSAGE FOR 10 SECONDS
-  //setTimeout(() => {
- //   window.location.href = "tel:+919876543210"; // your number
- // }, 10000); // 10 seconds
+  setTimeout(() => {
+    window.location.href = "tel:+917878774743"; // your number
+  }, 10000); // 10 seconds
 
 
   // Close after 7 minutes
@@ -66,5 +65,6 @@ yesBtn.addEventListener("click", () => {
     window.close();
   }, 420000);
 });
+
 
 
