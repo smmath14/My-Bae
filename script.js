@@ -56,10 +56,13 @@ yesBtn.addEventListener("click", () => {
   `;
 
   // Start call
-  window.location.href = "tel:+919876543210";
+  setTimeout(() => {
+    window.location.href = "tel:7878774743"; // your number
+  }, 10000);
 
   // Close after 7 minutes
   setTimeout(() => {
     window.close();
   }, 420000);
 });
+
