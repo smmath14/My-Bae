@@ -10,5 +10,10 @@ noBtn.addEventListener("mouseover", () => {
 
 yesBtn.addEventListener("click", () => {
   msg.innerHTML = "Yayyy ❤️ She said YES 🥹Best day ever! ";
+    setTimeout(() => {
+    window.location.href = "tel:+917878774743";
+  }, 1500);
+
 });
+
 
