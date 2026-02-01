@@ -2,7 +2,7 @@ const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const card = document.querySelector(".card");
 
-/* FUNCTION TO MOVE NO */
+/* MOVE NO AROUND */
 function moveNo() {
   const x = Math.random() * (window.innerWidth - 100);
   const y = Math.random() * (window.innerHeight - 100);
@@ -11,13 +11,13 @@ function moveNo() {
   noBtn.style.top = y + "px";
 }
 
-/* NO ESCAPES ALWAYS */
+/* NO ESCAPES */
 noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("mousedown", moveNo);
 noBtn.addEventListener("touchstart", moveNo);
 noBtn.addEventListener("focus", moveNo);
 
-/* EVEN IF SOMEHOW CLICKED */
+/* BLOCK NO CLICK */
 noBtn.addEventListener("click", (e) => {
   e.preventDefault();
   e.stopPropagation();
@@ -28,15 +28,15 @@ noBtn.addEventListener("click", (e) => {
 /* YES BUTTON */
 yesBtn.addEventListener("click", () => {
 
-  // Fullscreen only on YES
+  // Fullscreen ONLY here
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
   }
 
-  // Remove NO completely
+  // Remove NO
   noBtn.remove();
 
-  // Full screen message
+  // Fullscreen message
   card.innerHTML = `
     <div style="
       height:100vh;
