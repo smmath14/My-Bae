@@ -36,7 +36,7 @@ yesBtn.addEventListener("click", () => {
   // Remove NO
   noBtn.remove();
 
-  // Fullscreen message
+ // Show message FULL SCREEN
   card.innerHTML = `
     <div style="
       height:100vh;
@@ -55,14 +55,16 @@ yesBtn.addEventListener("click", () => {
     </div>
   `;
 
-  // Start call
-  setTimeout(() => {
-    window.location.href = "tel:7878774743"; // your number
-  }, 10000);
+  // KEEP MESSAGE FOR 10 SECONDS
+  //setTimeout(() => {
+ //   window.location.href = "tel:+919876543210"; // your number
+ // }, 10000); // 10 seconds
+
 
   // Close after 7 minutes
   setTimeout(() => {
     window.close();
   }, 420000);
 });
+
 
