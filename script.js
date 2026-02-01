@@ -2,24 +2,33 @@ const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const card = document.querySelector(".card");
 
-/* COMPLETELY DISABLE NO */
+/* FUNCTION TO MOVE NO */
+function moveNo() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 100);
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+}
+
+/* NO ESCAPES ALWAYS */
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("mousedown", moveNo);
+noBtn.addEventListener("touchstart", moveNo);
+noBtn.addEventListener("focus", moveNo);
+
+/* EVEN IF SOMEHOW CLICKED */
 noBtn.addEventListener("click", (e) => {
   e.preventDefault();
   e.stopPropagation();
+  moveNo();
   return false;
-});
-
-/* NO RUNS FOREVER */
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 400 - 200;
-  const y = Math.random() * 400 - 200;
-  noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 /* YES BUTTON */
 yesBtn.addEventListener("click", () => {
 
-  // Fullscreen ONLY on YES
+  // Fullscreen only on YES
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen().catch(() => {});
   }
@@ -46,11 +55,11 @@ yesBtn.addEventListener("click", () => {
     </div>
   `;
 
-  // Start call (no timeout)
+  // Start call
   window.location.href = "tel:+919876543210";
 
-  // Close tab after 7 minutes
+  // Close after 7 minutes
   setTimeout(() => {
     window.close();
-  }, 420000); // 7 minutes
+  }, 420000);
 });
