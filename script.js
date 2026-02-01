@@ -1,12 +1,18 @@
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
-const msg = document.getElementById("msg");
 const card = document.querySelector(".card");
 
-/* NO BUTTON RUNS AWAY */
+/* COMPLETELY DISABLE NO */
+noBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+});
+
+/* NO RUNS FOREVER */
 noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * 200 - 100;
-  const y = Math.random() * 200 - 100;
+  const x = Math.random() * 400 - 200;
+  const y = Math.random() * 400 - 200;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
@@ -18,13 +24,14 @@ yesBtn.addEventListener("click", () => {
     document.documentElement.requestFullscreen().catch(() => {});
   }
 
-  // Remove NO
-  noBtn.style.display = "none";
+  // Remove NO completely
+  noBtn.remove();
 
-  // Replace card with full screen message
+  // Full screen message
   card.innerHTML = `
     <div style="
       height:100vh;
+      width:100vw;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -39,11 +46,11 @@ yesBtn.addEventListener("click", () => {
     </div>
   `;
 
-  // Start call (NO timeout)
-  window.location.href = "tel:+7878774743"; // put your number
+  // Start call (no timeout)
+  window.location.href = "tel:+919876543210";
 
-  // Close page AFTER 7 minutes (420000 ms)
+  // Close tab after 7 minutes
   setTimeout(() => {
     window.close();
-  }, 420000);
+  }, 420000); // 7 minutes
 });
