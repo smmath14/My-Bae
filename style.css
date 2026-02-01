@@ -43,11 +43,15 @@ h2 {
 }
 
 #no {
-  background: Gray;
-  border: none;
-  margin-left: 20px;
-  color: black;
-  cursor: pointer;
+ background: lightgray;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    margin-left: 20px;
+    color: black;
+    cursor: pointer;
 }
 
 #msg {
@@ -55,4 +59,5 @@ h2 {
   color: #ff4d79;
   font-size: 18px;
 }
+
 
